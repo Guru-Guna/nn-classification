@@ -11,6 +11,8 @@ An automobile company has plans to enter new markets with their existing product
 In their existing market, the sales team has classified all customers into 4 segments (A, B, C, D ). Then, they performed segmented outreach and communication for a different segment of customers. This strategy has work exceptionally well for them. They plan to use the same strategy for the new markets.
 
 You are required to help the manager to predict the right group of the new customers.
+## Neural Network Model
+![neural](https://user-images.githubusercontent.com/93427255/228321654-e0c0dd74-00bb-42dc-8da2-ec644fae69e3.png)
 
 ## DESIGN STEPS
 
@@ -25,8 +27,8 @@ Train the data and then predict using Tensorflow
 
 ## PROGRAM
 ```
-Program developed by : Shrruthilaya G
-Register number : 212221230097
+Program developed by : Gunaseelan G
+Register number : 212221230031
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -138,16 +140,7 @@ X_test_scaled[:,2] = scaler_age.transform(X_test[:,2].reshape(-1,1)).reshape(-1)
 
 from sklearn.utils.extmath import softmax
 from tensorflow import keras
-ai_brain = keras.Sequential([
-    Dense(6,input_shape = (8,) ),
-    Dense(64,activation="relu"),
-    Dropout(rate=0.3),
-    Dense(128,activation="relu"),
-    Dropout(rate=0.3),
-    #BatchNormalization(),
-    Dense(32,activation="relu"),
-    Dense(4,activation='softmax')
-])
+ai_brain = Sequential([Dense(8,input_shape = (8,) ), Dense(32,activation="relu"), Dense(4,activation='softmax') ])
 
 ai_brain.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
 
@@ -183,22 +176,27 @@ print(le.inverse_transform(x_single_prediction))
 
 ```
 ## Dataset Information
-![](datainfo.PNG)
+![dataset information](https://user-images.githubusercontent.com/93427255/228321909-017fded5-9d46-48d5-8de9-9b662c1495b1.png)
+
 
 ## OUTPUT
 
 ### Training Loss, Validation Loss Vs Iteration Plot
-![](plot.PNG)
+![plot](https://user-images.githubusercontent.com/93427255/228321956-53408189-68d3-40e4-8163-84900322d141.png)
+
 
 ### Classification Report
-![](classification.PNG)
+![accuracy](https://user-images.githubusercontent.com/93427255/228321999-da6bc30e-329e-41ac-a813-5282fcff548f.png)
+
 
 ### Confusion Matrix
-![](confusion.PNG)
+![confusion](https://user-images.githubusercontent.com/93427255/228322024-19c6e9f2-09c2-43fc-8060-8ab02c8f2536.png)
+
 
 
 ### New Sample Data Prediction
-![](newpred.PNG)
+![last](https://user-images.githubusercontent.com/93427255/228322067-0c4e91d6-6a01-487d-a37a-48a9fc3cd0cf.png)
+
 
 ## RESULT
 Thus, the neural network classification model of the given data set is predicted and displayed.
